@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from './Footer'
-import AddTask from '../containers/AddTodo'
-import VisibleTaskList from '../containers/VisibleTodoList'
+import Footer from './components/Footer'
+import AddTask from './containers/AddTask'
+import VisibleTaskList from './containers/VisibleTaskList'
 import './App.css';
 
 function App() {
