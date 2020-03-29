@@ -6,6 +6,7 @@ const tasks = (state = [], action) => {
           {
             id: action.id,
             text: action.text,
+            dueDate: action.date,
             completed: false
           }
         ]

@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const Task = ({ onClick, completed, text }) => (
+const Task = ({ onClick, completed, text, dueDate }) => (
     <li
-      onClick={onClick}
+      onClick={() => {
+        if (new Date() <= new Date(dueDate)) {
+          onClick()
+        }
+      }}
       style={{
-        textDecoration: completed ? 'line-through' : 'none'
+        textDecoration: completed ? 'line-through' : 'none',
+        color: (new Date() <= new Date(dueDate)) ? 'black' : 'red'
       }}
     >
-      {text}
+      {text}, due date:{dueDate}{(new Date() <= new Date(dueDate)) ? '' : ', this task is past it\'s due!'}
     </li>
   )
   
